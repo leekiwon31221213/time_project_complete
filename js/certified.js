@@ -8,11 +8,19 @@ $(document).ready(function () {
   let submitButton = document.querySelector('.form-submit-btn');
   let certified_modal_save_container = document.querySelector('.certified-modal-save-container');
 
-  // 인증버튼 클릭시
+  function admin_pw_input() {
+    let admin_pw = document.querySelector('.admin-pw');
+    return admin_pw && admin_pw.value === '1234';
+  }
+
   function certifiedBtn() {
     certified_btn.addEventListener('click', function () {
-      certified_modal.classList.add('active');
-      // console.log('인증버튼 클릭');
+      if (admin_pw_input()) {
+        certified_modal.classList.add('active');
+        // console.log('인증버튼 클릭');
+      } else {
+        alert('잘못된 비밀번호입니다.');
+      }
     });
   }
 
