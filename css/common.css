@@ -1,0 +1,373 @@
+@charset "UTF-8";
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 8px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  width: 100%;
+  height: 100%;
+  background-color: #141517;
+  font-family: "Pretendard-Regular";
+}
+
+form {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+form input {
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  background-color: #373a3f;
+  padding: 0 15px;
+}
+form input::placeholder {
+  color: #ccc;
+}
+form textarea {
+  border-radius: 8px;
+  width: 100%;
+  height: 240px;
+  color: #fff;
+  background-color: #373a3f;
+  padding: 15px;
+  font-family: "Pretendard-Regular";
+}
+form textarea::placeholder {
+  color: #ccc;
+}
+
+#wrap .header {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: rgba(0, 0, 0, 0.6117647059);
+}
+#wrap .header h1 {
+  color: #fff;
+  margin-left: 30px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+#wrap .main-contents {
+  color: #fff;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#wrap .main-contents .contents__inner {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+#wrap .main-contents .contents__inner ul {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
+#wrap .main-contents .contents__inner ul li {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#wrap .main-contents .contents__inner ul li.form-box form {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+#wrap .main-contents .contents__inner ul li.form-box form input {
+  border-radius: 8px;
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  color: #fff;
+  background-color: #373a3f;
+  padding: 0 15px;
+  margin-right: 15px;
+}
+#wrap .main-contents .contents__inner ul li.form-box form input::placeholder {
+  color: #ccc;
+}
+#wrap .main-contents .contents__inner ul li.form-box form .certified-btn {
+  background-color: #00ffa3;
+  width: 100%;
+  max-width: 120px;
+  height: 50px;
+  border-radius: 8px;
+  color: #333;
+  font-weight: 600;
+  transition: 0.3s;
+}
+#wrap .main-contents .contents__inner ul li.form-box form .certified-btn:hover {
+  background-color: #00cc82;
+}
+#wrap .main-contents .contents__inner ul li.form-box form .certified-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 255, 163, 0.5);
+}
+#wrap .main-contents .contents__inner ul li h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+}
+#wrap .main-contents .contents__inner .checkbox-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-top: 20px;
+}
+#wrap .main-contents .contents__inner .checkbox-container input[type=checkbox] {
+  display: none;
+}
+#wrap .main-contents .contents__inner .checkbox-container::after {
+  content: "";
+  position: absolute;
+  right: -29px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: url("../img/bg_check.svg") no-repeat center center;
+  background-size: contain;
+}
+#wrap .main-contents .contents__inner .checkbox-container.checked::after {
+  background: url("../img/bg_radio_checked.svg") no-repeat center center;
+}
+
+/* 모달공통 */
+.modal-common {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: 0.4s;
+  color: #fff;
+  overflow-y: scroll;
+}
+.modal-common.active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-common .modal__inner {
+  padding: 20px;
+  width: 90%;
+  height: 700px;
+  /* // */
+  /* 이용약관 및 개인정보 처리방침 */
+}
+.modal-common .modal__inner .modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-common .modal__inner .modal-header h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.modal-common .modal__inner .modal-header i {
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.modal-common .modal__inner .term-privacy-text {
+  height: 600px;
+  background-color: #373a3f;
+  overflow-y: auto;
+  border-radius: 8px;
+  color: #fff;
+  padding: 30px;
+}
+.modal-common .modal__inner .term-privacy-text li {
+  margin-bottom: 20px;
+}
+.modal-common .modal__inner .term-privacy-text li:first-child h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+.modal-common .modal__inner .term-privacy-text li h4 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.modal-common .modal__inner .term-privacy-text li p {
+  font-size: 1.6rem;
+  color: #ddd;
+}
+.modal-common .modal__inner .submit-btn-box {
+  text-align: right;
+}
+.modal-common .modal__inner .submit-btn-box .term-submit-btn {
+  width: 100%;
+  max-width: 180px;
+  height: 55px;
+  color: #333;
+  background-color: #00ffa3;
+  border-radius: 8px;
+  transition: 0.4s;
+  margin-top: 20px;
+}
+.modal-common .modal__inner .submit-btn-box .term-submit-btn:hover {
+  background-color: #00cc82;
+  font-weight: 600;
+}
+.modal-common .modal__inner .submit-btn-box .term-submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 255, 163, 0.5);
+}
+
+/* 인증 클릭후 팝업 */
+.certified-modal-container .modal__inner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.certified-modal-container .modal__inner form {
+  flex-direction: row-reverse;
+}
+.certified-modal-container .modal__inner form ol {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.certified-modal-container .modal__inner form ol li {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.certified-modal-container .modal__inner form ol li label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.certified-modal-container .modal__inner form ol li label input,
+.certified-modal-container .modal__inner form ol li label textarea {
+  margin-top: 20px;
+}
+.certified-modal-container .modal__inner i {
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  right: 14%;
+}
+.certified-modal-container .modal__inner .submit-btn-box {
+  width: 80%;
+  height: 50px;
+  background-color: #00ffa3;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.certified-modal-container .modal__inner .submit-btn-box button {
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+  border-radius: 8px;
+}
+.certified-modal-container .modal__inner .submit-btn-box button:hover {
+  background-color: #00cc82;
+  font-weight: 600;
+}
+
+.certified-modal-save-container .modal__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.certified-modal-save-container .modal__inner .save-img-text-tie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.certified-modal-save-container .modal__inner .save-img-text-tie img {
+  width: 100%;
+  max-width: 150px;
+}
+.certified-modal-save-container .modal__inner .save-img-text-tie p {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 7rem;
+  letter-spacing: 1.5px;
+}
+.certified-modal-save-container .modal__inner a {
+  width: 65%;
+  height: 50px;
+  background-color: #00ffa3;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-weight: 600;
+}
+.certified-modal-save-container .modal__inner a:hover {
+  background-color: #00cc82;
+}
+
+/* 반응형 */
+/* main */
+@media (max-width: 765px) {
+  #wrap .main-contents .contents__inner ul {
+    width: 100%;
+  }
+  #wrap .main-contents .contents__inner ul li h2 {
+    font-size: clamp(1.9rem, 3.448vw, 2.4rem);
+  }
+  #wrap .main-contents .contents__inner ul li p,
+  #wrap .main-contents .contents__inner ul li label {
+    font-size: clamp(1.4rem, 3.889vw, 1.6rem);
+  }
+  #wrap .main-contents .contents__inner ul li.form-box form .certified-btn {
+    max-width: clamp(70px, 19.444vw, 120px);
+  }
+  .modal-common .modal__inner .modal-header h2 {
+    font-size: clamp(1.6rem, 4.444vw, 2rem);
+  }
+  .modal-common .modal__inner .term-privacy-text li:first-child h3 {
+    font-size: clamp(1.5rem, 4.167vw, 2rem);
+  }
+  .modal-common .modal__inner .term-privacy-text li h4 {
+    font-size: clamp(1.4rem, 4.444vw, 1.8rem);
+  }
+  .modal-common .modal__inner .term-privacy-text li p {
+    font-size: clamp(1.3rem, 4.444vw, 1.6rem);
+  }
+  .modal-common .modal__inner .submit-btn-box .term-submit-btn {
+    width: clamp(120px, 33.333vw, 180px);
+  }
+}
+@media (max-width: 550px) {
+  .certified-modal-container .modal__inner form ol li label {
+    font-size: clamp(1.4rem, 3.889vw, 1.6rem);
+  }
+}
